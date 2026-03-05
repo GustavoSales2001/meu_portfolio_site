@@ -22,16 +22,18 @@
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
   <!-- Segurança (CSP leve) - evita alguns ataques comuns. Mantém CDN liberado. -->
+  <!-- Ajuste sênior: connect-src permite o Railway explicitamente (além de https:) -->
   <meta http-equiv="Content-Security-Policy"
     content="
       default-src 'self' https:;
       img-src 'self' https: data:;
       style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
       script-src 'self' 'unsafe-inline' https:;
-      connect-src https:;
+      connect-src 'self' https: https://meuportfolio-production-0b48.up.railway.app;
       base-uri 'self';
       form-action 'self';
       frame-ancestors 'none';
+      upgrade-insecure-requests;
     ">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -102,6 +104,13 @@
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 3px solid rgba(0,255,204,.65);
       outline-offset: 3px;
+    }
+
+    /* Respeita usuários com redução de movimento */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .card { transition: none !important; transform: none !important; opacity: 1 !important; }
+      .menu a, .btn, .social a { transition: none !important; }
     }
 
     .topo {
@@ -413,17 +422,17 @@
         </div>
 
         <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required maxlength="255">
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required maxlength="255" minlength="2">
 
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" placeholder="Seu email" autocomplete="email" required maxlength="255">
 
         <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" placeholder="Deixe sua mensagem" rows="3" required maxlength="2000"></textarea>
+        <textarea id="mensagem" name="mensagem" placeholder="Deixe sua mensagem" rows="3" required maxlength="2000" minlength="10"></textarea>
 
         <button id="btnEnviar" type="submit">Enviar</button>
 
-        <div id="feedback" class="feedback" style="display:none;"></div>
+        <div id="feedback" class="feedback" style="display:none;" role="status" aria-live="polite" tabindex="-1"></div>
       </form>
     </section>
   </main>
@@ -449,6 +458,13 @@
 
       const show = () => el.classList.add("show");
 
+      // Respeita prefers-reduced-motion
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) {
+        show();
+        return;
+      }
+
       if ("IntersectionObserver" in window) {
         const io = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
@@ -473,6 +489,8 @@
     // - timeout com AbortController
     // - honeypot anti-bot
     // - persistência simples (nome/email)
+    // - foco no feedback (UX melhor)
+    // - aria-busy no botão
     (function () {
       const form = document.getElementById("formContato");
       const btn = document.getElementById("btnEnviar");
@@ -495,6 +513,11 @@
         feedbackEl.className = "feedback " + (type || "");
         feedbackEl.textContent = text || "";
         feedbackEl.style.display = text ? "block" : "none";
+
+        // joga o foco no feedback (bom pra acessibilidade e UX)
+        if (text) {
+          try { feedbackEl.focus(); } catch (_) {}
+        }
       }
 
       function isValidEmail(email) {
@@ -503,6 +526,12 @@
 
       function normalizeApiBase(v) {
         return String(v || "").trim().replace(/\/+$/, "");
+      }
+
+      function setLoading(isLoading) {
+        btn.disabled = isLoading;
+        btn.setAttribute("aria-busy", isLoading ? "true" : "false");
+        btn.textContent = isLoading ? "Enviando..." : "Enviar";
       }
 
       form.addEventListener("submit", async function (e) {
@@ -524,6 +553,11 @@
           return;
         }
 
+        if (nome.length < 2) {
+          setFeedback("err", "Nome muito curto. Digite pelo menos 2 caracteres.");
+          return;
+        }
+
         if (!isValidEmail(email)) {
           setFeedback("err", "E-mail inválido. Verifique e tente novamente.");
           return;
@@ -531,6 +565,11 @@
 
         if (nome.length > 255 || email.length > 255) {
           setFeedback("err", "Nome ou e-mail muito longos.");
+          return;
+        }
+
+        if (mensagem.length < 10) {
+          setFeedback("err", "Mensagem muito curta. Escreva pelo menos 10 caracteres.");
           return;
         }
 
@@ -550,8 +589,7 @@
           localStorage.setItem("contato_email", email);
         } catch (_) {}
 
-        btn.disabled = true;
-        btn.textContent = "Enviando...";
+        setLoading(true);
         setFeedback("", "");
 
         // Timeout de rede (se a API travar)
@@ -576,7 +614,6 @@
 
           setFeedback("ok", payload.mensagem || "Mensagem enviada com sucesso!");
           form.reset();
-
           // mantém nome/email salvo, então não limpamos localStorage
         } catch (err) {
           const msg =
@@ -588,8 +625,7 @@
           setFeedback("err", msg);
         } finally {
           clearTimeout(timeoutId);
-          btn.disabled = false;
-          btn.textContent = "Enviar";
+          setLoading(false);
         }
       });
     })();
