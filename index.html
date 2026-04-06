@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +43,7 @@
     "name": "Gustavo Sales",
     "url": "https://gustavosales2001.github.io/meu_portfolio_site/",
     "image": "https://i.imgur.com/aS0H0KX.png",
-    "jobTitle": "Desenvolvedor Front-end & UI/UX",
+    "jobTitle": "Desenvolvedor de IA, Integração de Sistemas e Automação Comercial",
     "sameAs": [
       "https://github.com/GustavoSales2001",
       "https://www.linkedin.com/in/gustavo-sales-3310a6210",
@@ -73,7 +75,6 @@
       z-index: -1;
     }
 
-    /* Acessibilidade */
     .sr-only {
       position: absolute; width: 1px; height: 1px;
       padding: 0; margin: -1px; overflow: hidden;
@@ -93,7 +94,6 @@
       text-decoration: none;
     }
     .skip-link:focus { left: 12px; outline: none; }
-
 
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 3px solid rgba(0,255,204,.65);
@@ -189,13 +189,14 @@
       color: #d6d6d6;
       margin-top: 8px;
       font-size: 14px;
+      line-height: 1.5;
     }
 
     .subheadline {
       color: #bdbdbd;
       margin-top: 10px;
       font-size: 13px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     .cta {
@@ -368,10 +369,10 @@
       <img src="https://i.imgur.com/aS0H0KX.png" alt="Foto de Gustavo Sales" loading="lazy" decoding="async">
 
       <h1>Gustavo Sales</h1>
-      <p class="headline">Front-end & UI/UX • Node.js + MySQL (Railway)</p>
+      <p class="headline">Integração de sistemas • Automação comercial • IA aplicada a vendas</p>
       <p class="subheadline">
-        Construo interfaces responsivas e integrações simples (API + banco).
-        Foco em clareza, performance e acabamento.
+        Desenvolvo soluções com APIs, CRM, ERP, banco de dados e chatbots inteligentes
+        para qualificação de leads, automação de fluxos e ganho de eficiência operacional.
       </p>
 
       <div class="cta">
@@ -384,12 +385,12 @@
       </div>
 
       <div class="skills" aria-label="Tecnologias">
-        <span class="badge">JavaScript</span>
-        <span class="badge">HTML/CSS</span>
-        <span class="badge">Node.js</span>
-        <span class="badge">Express</span>
-        <span class="badge">MySQL</span>
-        <span class="badge">Railway</span>
+        <span class="badge">IA</span>
+        <span class="badge">APIs</span>
+        <span class="badge">CRM</span>
+        <span class="badge">ERP</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Automação</span>
       </div>
 
       <div class="social" aria-label="Contato rápido">
@@ -440,14 +441,12 @@
   </footer>
 
   <script>
- 
     (function () {
       const el = document.querySelector(".reveal");
       if (!el) return;
 
       const show = () => el.classList.add("show");
 
-      // Respeita prefers-reduced-motion
       const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) {
         show();
@@ -464,11 +463,9 @@
 
         io.observe(el);
       } else {
-        // fallback antigo
         setTimeout(show, 300);
       }
 
-      // fallback (igual sua ideia): mostra depois de 1s
       setTimeout(show, 1000);
     })();
 
@@ -482,7 +479,6 @@
       const mensagemEl = document.getElementById("mensagem");
       const honeypotEl = document.getElementById("company");
 
-
       try {
         const savedNome = localStorage.getItem("contato_nome");
         const savedEmail = localStorage.getItem("contato_email");
@@ -495,7 +491,6 @@
         feedbackEl.textContent = text || "";
         feedbackEl.style.display = text ? "block" : "none";
 
-    
         if (text) {
           try { feedbackEl.focus(); } catch (_) {}
         }
@@ -523,7 +518,6 @@
         const email = emailEl.value.trim();
         const mensagem = mensagemEl.value.trim();
 
-        // Anti-bot: se preencher o honeypot, bloqueia
         if (honeypotEl && honeypotEl.value.trim()) {
           setFeedback("err", "Falha na validação. Tente novamente.");
           return;
@@ -564,7 +558,6 @@
           return;
         }
 
-        // Salva nome/email (UX)
         try {
           localStorage.setItem("contato_nome", nome);
           localStorage.setItem("contato_email", email);
@@ -573,9 +566,8 @@
         setLoading(true);
         setFeedback("", "");
 
-        // Timeout de rede (se a API travar)
         const controller = new AbortController();
-        const timeoutMs = 12000; // 12s
+        const timeoutMs = 12000;
         const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
         try {
@@ -595,7 +587,6 @@
 
           setFeedback("ok", payload.mensagem || "Mensagem enviada com sucesso!");
           form.reset();
-          // mantém nome/email salvo, então não limpamos localStorage
         } catch (err) {
           const msg =
             err && err.name === "AbortError"
