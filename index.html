@@ -4,25 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Gustavo Sales — Portfólio | Front-end & UI/UX</title>
-  <meta name="description" content="Portfólio de Gustavo Sales. Projetos em Front-end, UI/UX e integrações com Node.js, Express e MySQL (Railway). Veja projetos, certificados e entre em contato." />
+  <title>Gustavo Sales — Portfólio | Fullstack  & UI/UX</title>
+  <meta name="description" content="Portfólio de Gustavo Sales. Projetos em Front-end, UI/UX e integrações com Node.js, Express e MySQL (Railway). Veja projetos e entre em contato." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://gustavosales2001.github.io/meu_portfolio_site/" />
 
-  <!-- Open Graph (preview no LinkedIn/WhatsApp) -->
   <meta property="og:title" content="Gustavo Sales — Portfólio" />
   <meta property="og:description" content="Front-end & UI/UX | Projetos com Node.js, Express e MySQL (Railway). Clique e veja." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gustavosales2001.github.io/meu_portfolio_site/" />
   <meta property="og:image" content="https://i.imgur.com/aS0H0KX.png" />
 
-  <!-- Performance: preconnect -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://i.imgur.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
-  <!-- Segurança (CSP leve) - evita alguns ataques comuns. Mantém CDN liberado. -->
-  <!-- Ajuste sênior: connect-src permite o Railway explicitamente (além de https:) -->
   <meta http-equiv="Content-Security-Policy"
     content="
       default-src 'self' https:;
@@ -38,7 +34,6 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- SEO: Schema.org (profissional para recrutadores / rich results) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,7 +80,6 @@
       clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
-    /* Skip link (acessibilidade real) */
     .skip-link {
       position: absolute;
       left: -999px;
@@ -100,13 +94,12 @@
     }
     .skip-link:focus { left: 12px; outline: none; }
 
-    /* Foco visível (acessibilidade) */
+
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 3px solid rgba(0,255,204,.65);
       outline-offset: 3px;
     }
 
-    /* Respeita usuários com redução de movimento */
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
       .card { transition: none !important; transform: none !important; opacity: 1 !important; }
@@ -359,7 +352,6 @@
 
 <body>
 
-  <!-- Skip link (acessibilidade) -->
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="topo">
@@ -368,7 +360,6 @@
     <nav class="menu" aria-label="Navegação principal">
       <a href="https://gustavosales2001.github.io/sobre_mim/">Sobre</a>
       <a href="https://gustavosales2001.github.io/projetos/">Projetos</a>
-      <a href="https://gustavosales2001.github.io/meus_certificados/">Certificados</a>
     </nav>
   </header>
 
@@ -412,10 +403,8 @@
           <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
       </div>
-
-      <!-- API base configurável aqui (mais "sênior" que hardcode no JS) -->
+      
       <form id="formContato" data-api-base="https://meuportfolio-production-0b48.up.railway.app" novalidate>
-        <!-- Honeypot anti-bot (se preencher, a gente bloqueia) -->
         <div class="sr-only" aria-hidden="true">
           <label for="company">Empresa</label>
           <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
@@ -451,7 +440,7 @@
   </footer>
 
   <script>
-    // ✅ Reveal mais sênior: IntersectionObserver (melhor performance que scroll)
+ 
     (function () {
       const el = document.querySelector(".reveal");
       if (!el) return;
@@ -483,14 +472,6 @@
       setTimeout(show, 1000);
     })();
 
-    // ✅ Form mais sênior:
-    // - sem alert()
-    // - feedback inline
-    // - timeout com AbortController
-    // - honeypot anti-bot
-    // - persistência simples (nome/email)
-    // - foco no feedback (UX melhor)
-    // - aria-busy no botão
     (function () {
       const form = document.getElementById("formContato");
       const btn = document.getElementById("btnEnviar");
@@ -501,7 +482,7 @@
       const mensagemEl = document.getElementById("mensagem");
       const honeypotEl = document.getElementById("company");
 
-      // Preenche nome/email se já existirem (UX melhor)
+
       try {
         const savedNome = localStorage.getItem("contato_nome");
         const savedEmail = localStorage.getItem("contato_email");
@@ -514,7 +495,7 @@
         feedbackEl.textContent = text || "";
         feedbackEl.style.display = text ? "block" : "none";
 
-        // joga o foco no feedback (bom pra acessibilidade e UX)
+    
         if (text) {
           try { feedbackEl.focus(); } catch (_) {}
         }
