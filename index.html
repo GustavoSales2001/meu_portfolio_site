@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Gustavo Sales — Portfólio | Fullstack & UI/UX</title>
+  <title>Gustavo Sales — Portfólio | Fullstack  & UI/UX</title>
   <meta name="description" content="Portfólio de Gustavo Sales. Projetos em Front-end, UI/UX e integrações com Node.js, Express e MySQL (Railway). Veja projetos e entre em contato." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://gustavosales2001.github.io/meu_portfolio_site/" />
@@ -73,6 +73,7 @@
       z-index: -1;
     }
 
+    /* Acessibilidade */
     .sr-only {
       position: absolute; width: 1px; height: 1px;
       padding: 0; margin: -1px; overflow: hidden;
@@ -92,6 +93,7 @@
       text-decoration: none;
     }
     .skip-link:focus { left: 12px; outline: none; }
+
 
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 3px solid rgba(0,255,204,.65);
@@ -356,8 +358,8 @@
     <div class="logo">Gustavo</div>
 
     <nav class="menu" aria-label="Navegação principal">
-      <a href="./sobre.html">Sobre</a>
-      <a href="./projetos.html">Projetos</a>
+      <a href="https://gustavosales2001.github.io/sobre_mim/">Sobre</a>
+      <a href="https://gustavosales2001.github.io/projetos/">Projetos</a>
     </nav>
   </header>
 
@@ -438,12 +440,14 @@
   </footer>
 
   <script>
+ 
     (function () {
       const el = document.querySelector(".reveal");
       if (!el) return;
 
       const show = () => el.classList.add("show");
 
+      // Respeita prefers-reduced-motion
       const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) {
         show();
@@ -460,9 +464,11 @@
 
         io.observe(el);
       } else {
+        // fallback antigo
         setTimeout(show, 300);
       }
 
+      // fallback (igual sua ideia): mostra depois de 1s
       setTimeout(show, 1000);
     })();
 
@@ -476,6 +482,7 @@
       const mensagemEl = document.getElementById("mensagem");
       const honeypotEl = document.getElementById("company");
 
+
       try {
         const savedNome = localStorage.getItem("contato_nome");
         const savedEmail = localStorage.getItem("contato_email");
@@ -488,6 +495,7 @@
         feedbackEl.textContent = text || "";
         feedbackEl.style.display = text ? "block" : "none";
 
+    
         if (text) {
           try { feedbackEl.focus(); } catch (_) {}
         }
@@ -515,6 +523,7 @@
         const email = emailEl.value.trim();
         const mensagem = mensagemEl.value.trim();
 
+        // Anti-bot: se preencher o honeypot, bloqueia
         if (honeypotEl && honeypotEl.value.trim()) {
           setFeedback("err", "Falha na validação. Tente novamente.");
           return;
@@ -555,6 +564,7 @@
           return;
         }
 
+        // Salva nome/email (UX)
         try {
           localStorage.setItem("contato_nome", nome);
           localStorage.setItem("contato_email", email);
@@ -563,8 +573,9 @@
         setLoading(true);
         setFeedback("", "");
 
+        // Timeout de rede (se a API travar)
         const controller = new AbortController();
-        const timeoutMs = 12000;
+        const timeoutMs = 12000; // 12s
         const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
         try {
@@ -584,6 +595,7 @@
 
           setFeedback("ok", payload.mensagem || "Mensagem enviada com sucesso!");
           form.reset();
+          // mantém nome/email salvo, então não limpamos localStorage
         } catch (err) {
           const msg =
             err && err.name === "AbortError"
