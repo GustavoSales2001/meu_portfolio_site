@@ -1,219 +1,401 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Projetos - Gustavo Sales</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <title>Projetos - Gustavo Sales</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+    </head>
 
-<body>
+    <body>
 
-<header class="topo">
-  <div class="logo">Gustavo</div>
+    <header class="topo">
+      <div class="logo">Gustavo</div>
 
-  <nav class="menu">
-    <a href="sobre.html">Sobre</a>
-    <a href="projetos.html">Projetos</a>
-  </nav>
-</header>
+      <nav class="menu">
+        <a href="sobre.html">Sobre</a>
+        <a href="projetos.html">Projetos</a>
+      </nav>
+    </header>
 
-<main class="page-container">
+    <main class="page-container">
 
-  <section class="projeto-card reveal">
-    <h2>Projeto: Plataforma de Curso com Pagamento, Chatbot e Dashboard em Tempo Real</h2>
-    <div class="case-section">
+      <section class="projeto-card reveal">
+        <h2>Projeto: Plataforma de Curso com Pagamento, Chatbot e Dashboard em Tempo Real</h2>
+        <div class="case-section">
 
-  <div class="case-header">
-    <span class="case-tag">CASE REAL EM PRODUÇÃO</span>
-    <h3>Arquitetura, automação e problemas resolvidos</h3>
-    <p>
-      Prints reais do desenvolvimento, deploy, banco de dados, logs e integrações usadas no projeto.
-    </p>
-  </div>
-
-  <div class="case-grid">
-
-    <article class="case-card featured">
-      <img src="img/dashboard.jpeg" alt="Dashboard do chatbot em tempo real">
-      <div class="case-content">
-        <span>Dashboard</span>
-        <h4>Inbox em tempo real para acompanhar conversas</h4>
+      <div class="case-header">
+        <span class="case-tag">CASE REAL EM PRODUÇÃO</span>
+        <h3>Arquitetura, automação e problemas resolvidos</h3>
         <p>
-          Painel criado para visualizar mensagens enviadas e recebidas, status do bot,
-          histórico do usuário e acompanhamento das interações captadas pelo MySQL.
+          Prints reais do desenvolvimento, deploy, banco de dados, logs e integrações usadas no projeto.
         </p>
       </div>
-    </article>
 
-    <article class="case-card">
-      <img src="img/mysql-leads.jpeg" alt="Tabela MySQL com usuários e followups">
-      <div class="case-content">
-        <span>Banco de Dados</span>
-        <h4>Captação e controle de leads no MySQL</h4>
-        <p>
-          Estrutura de dados para acompanhar cadastro, telefone, pagamento, envio de WhatsApp
-          e quantidade de follow-ups realizados para cada lead.
-        </p>
+      <div class="case-grid">
+
+        <article class="case-card featured">
+          <img src="img/dashboard.jpeg" alt="Dashboard do chatbot em tempo real">
+          <div class="case-content">
+            <span>Dashboard</span>
+            <h4>Inbox em tempo real para acompanhar conversas</h4>
+            <p>
+              Painel criado para visualizar mensagens enviadas e recebidas, status do bot,
+              histórico do usuário e acompanhamento das interações captadas pelo MySQL.
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="img/mysql-leads.jpeg" alt="Tabela MySQL com usuários e followups">
+          <div class="case-content">
+            <span>Banco de Dados</span>
+            <h4>Captação e controle de leads no MySQL</h4>
+            <p>
+              Estrutura de dados para acompanhar cadastro, telefone, pagamento, envio de WhatsApp
+              e quantidade de follow-ups realizados para cada lead.
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="img/webhook-funcionando.jpeg" alt="Webhook e logs funcionando no Railway">
+          <div class="case-content">
+            <span>Produção</span>
+            <h4>Webhook e logs monitorados no Railway</h4>
+            <p>
+              Logs usados para validar recebimento de eventos, envio de mensagens, conexão com APIs
+              externas e comportamento do fluxo automatizado em produção.
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="img/cors-erro.jpeg" alt="Erro CORS resolvido">
+          <div class="case-content">
+            <span>Correção Técnica</span>
+            <h4>Correção de CORS entre front-end e API</h4>
+            <p>
+              Ajuste das origens permitidas e middleware no Express para liberar a comunicação
+              entre site, dashboard e back-end de forma segura.
+            </p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <img src="img/erro-whatsapp.jpeg" alt="Erro de autenticação WhatsApp">
+          <div class="case-content">
+            <span>WhatsApp API</span>
+            <h4>Resolução de autenticação na Meta API</h4>
+            <p>
+              Revisão de token, phone number ID, variáveis de ambiente e chamada oficial da API
+              para estabilizar o envio automático de mensagens.
+            </p>
+          </div>
+        </article>
+
       </div>
-    </article>
-
-    <article class="case-card">
-      <img src="img/webhook-funcionando.jpeg" alt="Webhook e logs funcionando no Railway">
-      <div class="case-content">
-        <span>Produção</span>
-        <h4>Webhook e logs monitorados no Railway</h4>
-        <p>
-          Logs usados para validar recebimento de eventos, envio de mensagens, conexão com APIs
-          externas e comportamento do fluxo automatizado em produção.
-        </p>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <img src="img/cors-erro.jpeg" alt="Erro CORS resolvido">
-      <div class="case-content">
-        <span>Correção Técnica</span>
-        <h4>Correção de CORS entre front-end e API</h4>
-        <p>
-          Ajuste das origens permitidas e middleware no Express para liberar a comunicação
-          entre site, dashboard e back-end de forma segura.
-        </p>
-      </div>
-    </article>
-
-    <article class="case-card">
-      <img src="img/erro-whatsapp.jpeg" alt="Erro de autenticação WhatsApp">
-      <div class="case-content">
-        <span>WhatsApp API</span>
-        <h4>Resolução de autenticação na Meta API</h4>
-        <p>
-          Revisão de token, phone number ID, variáveis de ambiente e chamada oficial da API
-          para estabilizar o envio automático de mensagens.
-        </p>
-      </div>
-    </article>
-
-  </div>
-</div>
-
-</div>
-
-    <p>
-      Este projeto foi desenvolvido como uma solução completa para venda e entrega de um curso online,
-      unindo página de vendas, cadastro de usuários, captação de leads, banco de dados, pagamento,
-      automação via WhatsApp, chatbot inteligente e dashboard de acompanhamento.
-    </p>
-
-    <p>
-      O fluxo principal começa no site, onde o usuário acessa a página do curso e realiza o cadastro.
-      Esses dados são armazenados no MySQL, permitindo acompanhar nome, e-mail, telefone, status de acesso,
-      pagamento e histórico de interação. A partir disso, o sistema consegue identificar em qual etapa cada
-      lead está dentro da jornada.
-    </p>
-
-    <p>
-      Após o cadastro, o usuário é direcionado para o pagamento. A integração com Mercado Pago registra o
-      pagamento, acompanha o status da transação e libera automaticamente o acesso ao conteúdo quando o
-      pagamento é aprovado. Caso o usuário se cadastre, mas não finalize a compra, ele entra em uma régua
-      automatizada de recuperação.
-    </p>
-
-    <p>
-      Para leads que não concluíram o pagamento, o sistema aguarda um intervalo estratégico e inicia um
-      follow-up automático pelo WhatsApp. O bot entra em contato de forma natural, identifica dúvidas,
-      responde objeções e ajuda o lead a seguir para a compra, sem depender de abordagem manual imediata.
-    </p>
-
-    <p>
-      O chatbot foi estruturado para responder dúvidas sobre o curso, currículo, IA, Gupy, ATS, pagamento,
-      acesso, problemas técnicos, certificado, primeiro emprego, transição de carreira e outras situações
-      comuns. As respostas foram organizadas para orientar o usuário, gerar segurança e direcionar corretamente
-      entre atendimento comercial e suporte técnico.
-    </p>
-
-    <p>
-      Também desenvolvi um dashboard/inbox para acompanhar as mensagens do chatbot. O painel busca as
-      informações diretamente do banco de dados, usando o número de celular como referência para conectar
-      usuário, mensagens enviadas, mensagens recebidas e status do bot. Dessa forma, é possível acompanhar
-      as conversas praticamente em tempo real e intervir manualmente quando necessário.
-    </p>
-
-    <p>
-      Durante o desenvolvimento, enfrentei e resolvi problemas reais de produção. Um dos principais foi o erro
-      de autenticação da API do WhatsApp/Meta, que impedia o envio das mensagens. A correção envolveu revisar
-      token, phone number ID, variáveis de ambiente e configuração da chamada para a API oficial.
-    </p>
-
-    <p>
-      Outro ponto importante foi a normalização dos números de telefone. O sistema precisava lidar com celulares
-      salvos em formatos diferentes no banco, com ou sem DDI, espaços, parênteses e traços. Para resolver isso,
-      implementei uma lógica de limpeza e padronização dos números brasileiros antes do envio pelo WhatsApp.
-    </p>
-
-    <p>
-      Também corrigi problemas de CORS, que bloqueavam requisições entre o front-end, o dashboard e a API em
-      produção. A solução foi ajustar as origens permitidas, liberar corretamente os métodos necessários e
-      garantir que a comunicação entre site, painel e back-end funcionasse de forma segura.
-    </p>
-
-    <p>
-      Além disso, implementei controles para evitar disparos duplicados, pausa do bot, registro de mensagens
-      de entrada e saída, delay estratégico antes do envio automático e organização dos logs no banco. Isso
-      deixou o fluxo mais estável, rastreável e próximo de uma operação comercial real.
-    </p>
-
-    <p>
-      Esse projeto representa uma aplicação Full Stack completa, com front-end, back-end, banco de dados,
-      integração com APIs externas, automação comercial, pagamento online, chatbot e dashboard. Mais do que
-      uma página de curso, ele funciona como uma esteira automatizada de vendas, atendimento e recuperação
-      de leads.
-    </p>
-
-    <div class="botao">
-      <a class="btn" href="https://gustavosales2001.github.io/Cursos_Love/" target="_blank">
-        <i class="fa-solid fa-globe"></i> Acessar Projeto
-      </a>
-
-      <a class="btn" href="index.html">
-        <i class="fa-solid fa-house"></i> Home Portfólio
-      </a>
     </div>
-  </section>
 
-  <div class="voltar">
-    <a class="btn" href="index.html">
-      <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
-    </a>
+    </div>
+
+        <p>
+          Este projeto foi desenvolvido como uma solução completa para venda e entrega de um curso online,
+          unindo página de vendas, cadastro de usuários, captação de leads, banco de dados, pagamento,
+          automação via WhatsApp, chatbot inteligente e dashboard de acompanhamento.
+        </p>
+
+        <p>
+          O fluxo principal começa no site, onde o usuário acessa a página do curso e realiza o cadastro.
+          Esses dados são armazenados no MySQL, permitindo acompanhar nome, e-mail, telefone, status de acesso,
+          pagamento e histórico de interação. A partir disso, o sistema consegue identificar em qual etapa cada
+          lead está dentro da jornada.
+        </p>
+
+        <p>
+          Após o cadastro, o usuário é direcionado para o pagamento. A integração com Mercado Pago registra o
+          pagamento, acompanha o status da transação e libera automaticamente o acesso ao conteúdo quando o
+          pagamento é aprovado. Caso o usuário se cadastre, mas não finalize a compra, ele entra em uma régua
+          automatizada de recuperação.
+        </p>
+
+        <p>
+          Para leads que não concluíram o pagamento, o sistema aguarda um intervalo estratégico e inicia um
+          follow-up automático pelo WhatsApp. O bot entra em contato de forma natural, identifica dúvidas,
+          responde objeções e ajuda o lead a seguir para a compra, sem depender de abordagem manual imediata.
+        </p>
+
+        <p>
+          O chatbot foi estruturado para responder dúvidas sobre o curso, currículo, IA, Gupy, ATS, pagamento,
+          acesso, problemas técnicos, certificado, primeiro emprego, transição de carreira e outras situações
+          comuns. As respostas foram organizadas para orientar o usuário, gerar segurança e direcionar corretamente
+          entre atendimento comercial e suporte técnico.
+        </p>
+
+        <p>
+          Também desenvolvi um dashboard/inbox para acompanhar as mensagens do chatbot. O painel busca as
+          informações diretamente do banco de dados, usando o número de celular como referência para conectar
+          usuário, mensagens enviadas, mensagens recebidas e status do bot. Dessa forma, é possível acompanhar
+          as conversas praticamente em tempo real e intervir manualmente quando necessário.
+        </p>
+
+        <p>
+          Durante o desenvolvimento, enfrentei e resolvi problemas reais de produção. Um dos principais foi o erro
+          de autenticação da API do WhatsApp/Meta, que impedia o envio das mensagens. A correção envolveu revisar
+          token, phone number ID, variáveis de ambiente e configuração da chamada para a API oficial.
+        </p>
+
+        <p>
+          Outro ponto importante foi a normalização dos números de telefone. O sistema precisava lidar com celulares
+          salvos em formatos diferentes no banco, com ou sem DDI, espaços, parênteses e traços. Para resolver isso,
+          implementei uma lógica de limpeza e padronização dos números brasileiros antes do envio pelo WhatsApp.
+        </p>
+
+        <p>
+          Também corrigi problemas de CORS, que bloqueavam requisições entre o front-end, o dashboard e a API em
+          produção. A solução foi ajustar as origens permitidas, liberar corretamente os métodos necessários e
+          garantir que a comunicação entre site, painel e back-end funcionasse de forma segura.
+        </p>
+
+        <p>
+          Além disso, implementei controles para evitar disparos duplicados, pausa do bot, registro de mensagens
+          de entrada e saída, delay estratégico antes do envio automático e organização dos logs no banco. Isso
+          deixou o fluxo mais estável, rastreável e próximo de uma operação comercial real.
+        </p>
+
+        <p>
+          Esse projeto representa uma aplicação Full Stack completa, com front-end, back-end, banco de dados,
+          integração com APIs externas, automação comercial, pagamento online, chatbot e dashboard. Mais do que
+          uma página de curso, ele funciona como uma esteira automatizada de vendas, atendimento e recuperação
+          de leads.
+        </p>
+
+        <div class="botao">
+          <a class="btn" href="https://gustavosales2001.github.io/Cursos_Love/" target="_blank">
+            <i class="fa-solid fa-globe"></i> Acessar Projeto
+          </a>
+
+          <a class="btn" href="index.html">
+            <i class="fa-solid fa-house"></i> Home Portfólio
+          </a>
+        </div>
+      </section>
+
+      <section class="projeto-card reveal">
+  <h2>Projeto: Arquitetura de Automação de Vendas com IA no WhatsApp</h2>
+
+  <div class="case-section">
+
+    <div class="case-header">
+      <span class="case-tag">AUTOMAÇÃO REAL EM OPERAÇÃO</span>
+      <h3>Fluxos inteligentes, qualificação, redirecionamento e reengajamento</h3>
+      <p>
+        Estrutura criada no SimpleDesk para automatizar atendimento, qualificar leads,
+        direcionar conversas e recuperar oportunidades paradas no funil.
+      </p>
+    </div>
+
+    <div class="case-grid">
+
+      <article class="case-card featured">
+        <img src="img/fluxo-pipeline.jpeg" alt="Pipeline de automação de vendas no SimpleDesk">
+        <div class="case-content">
+          <span>Pipeline Comercial</span>
+          <h4>Distribuição inteligente para SDR e vendas</h4>
+          <p>
+            Fluxo responsável por organizar a direção dos leads dentro da operação comercial,
+            distribuindo atendimentos conforme etapa, necessidade e prioridade do contato.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <img src="img/fluxo-pre-qualificacao.jpeg" alt="Fluxo de pré-qualificação no SimpleDesk">
+        <div class="case-content">
+          <span>Pré-qualificação</span>
+          <h4>Identificação automática do perfil do lead</h4>
+          <p>
+            Estrutura de perguntas e condições criada para entender o interesse inicial do usuário
+            e encaminhá-lo para o caminho mais adequado dentro da jornada.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <img src="img/fluxo-intermediario.jpeg" alt="Fluxo intermediário de decisão">
+        <div class="case-content">
+          <span>Decisão Inteligente</span>
+          <h4>Camada intermediária de roteamento</h4>
+          <p>
+            Fluxo criado para decidir se o lead deve seguir para uma IA especializada
+            ou para um redirecionamento direto, com base nas informações captadas anteriormente.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <img src="img/fluxo-sofia.jpeg" alt="Fluxo Sofia v2 com caminhos prioritários">
+        <div class="case-content">
+          <span>IA Conversacional</span>
+          <h4>Atendimento com caminhos prioritários</h4>
+          <p>
+            Fluxo principal estruturado para conduzir a conversa, responder dúvidas,
+            tratar objeções e direcionar o lead conforme intenção, contexto e etapa do funil.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <img src="img/fluxo-redirecionamento.jpeg" alt="Fluxo de redirecionamento no SimpleDesk">
+        <div class="case-content">
+          <span>Redirecionamento</span>
+          <h4>Direcionamento para o fluxo correto</h4>
+          <p>
+            Sistema de roteamento criado para evitar que o lead fique perdido na jornada,
+            enviando cada conversa para o fluxo correto ou para atendimento humano quando necessário.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <img src="img/fluxo-reengajamento.jpeg" alt="Fluxo de reengajamento por ociosidade">
+        <div class="case-content">
+          <span>Reengajamento</span>
+          <h4>Recuperação de leads por ociosidade</h4>
+          <p>
+            Automação baseada em tempo de inatividade, usada para reativar leads após envio de oferta,
+            link ou etapa importante, reduzindo perda de oportunidades no funil.
+          </p>
+        </div>
+      </article>
+
+    </div>
   </div>
 
-  
+  <p>
+    Desenvolvi uma arquitetura completa de automação de vendas via WhatsApp utilizando o SimpleDesk,
+    com múltiplos fluxos interconectados, controle por etiquetas, condições de decisão e reengajamento
+    automático baseado no comportamento do usuário.
+  </p>
 
-</main>
+  <p>
+    O fluxo começa com uma pré-qualificação, onde o lead passa por perguntas estratégicas para identificar
+    seu perfil, necessidade e estágio dentro da jornada. A partir dessas respostas, o sistema decide se o
+    usuário deve seguir para uma IA especializada, para um redirecionamento específico ou para uma etapa
+    comercial.
+  </p>
 
-<footer>
-  <p>© 2026 Gustavo Sales - Todos os direitos reservados</p>
+  <p>
+    Também criei uma camada intermediária de decisão, responsável por analisar informações do processo e
+    encaminhar o lead para o caminho correto. Essa estrutura evita que todos os contatos caiam no mesmo
+    atendimento e permite uma jornada mais personalizada.
+  </p>
 
-  <div class="footer-social">
-    <a href="https://www.linkedin.com/in/gustavo-sales-3310a6210" target="_blank">
-      <i class="fab fa-linkedin"></i>
-    </a>
+  <p>
+    Dentro do fluxo principal, a IA conduz a conversa com caminhos prioritários, tratando dúvidas,
+    objeções e intenções diferentes. O objetivo é manter o lead engajado, oferecer respostas mais claras
+    e reduzir a necessidade de intervenção humana em situações simples.
+  </p>
 
-    <a href="https://github.com/GustavoSales2001" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
+  <p>
+    Para os casos em que o lead fica parado, implementei fluxos de ociosidade e reengajamento. Esses fluxos
+    entram em ação após períodos de inatividade, enviando mensagens estratégicas para recuperar a conversa,
+    principalmente depois do envio de oferta, link ou etapa decisiva.
+  </p>
+
+  <p>
+    A automação também conta com lógica de transferência para atendimento humano e distribuição comercial,
+    permitindo que leads mais qualificados sejam direcionados para SDR ou vendas no momento certo.
+  </p>
+
+  <p>
+    Esse projeto funciona como um motor de vendas automatizado, unindo qualificação, atendimento com IA,
+    reengajamento, roteamento e distribuição comercial. A estrutura foi pensada para escalar atendimento,
+    reduzir perda de leads e tornar o processo comercial mais organizado e eficiente.
+  </p>
+
+  <div class="case-section">
+    <div class="case-header">
+      <span class="case-tag">LÓGICA APLICADA</span>
+      <h3>Principais recursos da automação</h3>
+    </div>
+
+    <div class="case-grid">
+
+      <article class="case-card">
+        <div class="case-content">
+          <span>Etiquetas</span>
+          <h4>Controle de estado do lead</h4>
+          <p>
+            Uso de etiquetas para identificar em qual etapa o usuário está e evitar conflitos entre fluxos.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-content">
+          <span>Ociosidade</span>
+          <h4>Reengajamento automático</h4>
+          <p>
+            Mensagens acionadas após períodos de inatividade para recuperar conversas paradas.
+          </p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-content">
+          <span>Roteamento</span>
+          <h4>Direção por contexto</h4>
+          <p>
+            Encaminhamento para IA, redirecionamento ou humano conforme o perfil e comportamento do lead.
+          </p>
+        </div>
+      </article>
+
+    </div>
   </div>
-</footer>
 
-<!-- MODAL ZOOM -->
-<div id="imgModal" class="img-modal">
-  <span class="close-modal">&times;</span>
-  <img class="modal-content" id="modalImg">
-  <div id="modalCaption"></div>
+  <div class="botao">
+  <a class="btn" href="index.html">
+    <i class="fa-solid fa-house"></i> Home Portfólio
+  </a>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+</section>
+
+      <div class="voltar">
+        <a class="btn" href="index.html">
+          <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
+        </a>
+      </div>
+
+      
+
+    </main>
+
+    <footer>
+      <p>© 2026 Gustavo Sales - Todos os direitos reservados</p>
+
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/gustavo-sales-3310a6210" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/GustavoSales2001" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- MODAL ZOOM -->
+    <div id="imgModal" class="img-modal">
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="modalCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+    </html>
