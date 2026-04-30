@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gustavo Sales — Integração de Sistemas, IA e Automação Comercial</title>
+
+  <meta name="description" content="Portfólio de Gustavo Sales. Desenvolvimento de IA aplicada a vendas, integração de sistemas via API, automação de processos, CRM, ERP e banco de dados SQL. Veja projetos e soluções." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://gustavosales2001.github.io/meu_portfolio_site/" />
+
+  <meta property="og:title" content="Gustavo Sales — IA, Integração e Automação" />
+  <meta property="og:description" content="Soluções com IA, chatbot SDR, integração entre CRM, ERP e APIs, automação de fluxos e desenvolvimento de sistemas voltados a resultado." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gustavosales2001.github.io/meu_portfolio_site/" />
+  <meta property="og:image" content="https://i.imgur.com/aS0H0KX.png" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://i.imgur.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self' https:;
+      img-src 'self' https: data:;
+      style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+      script-src 'self' 'unsafe-inline' https:;
+      connect-src 'self' https: https://backend-api-production-e153.up.railway.app;
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'none';
+      upgrade-insecure-requests;
+    ">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gustavo Sales",
+    "url": "https://gustavosales2001.github.io/meu_portfolio_site/",
+    "image": "https://i.imgur.com/aS0H0KX.png",
+    "jobTitle": "Desenvolvedor de IA, Integração de Sistemas e Automação Comercial",
+    "sameAs": [
+      "https://github.com/GustavoSales2001",
+      "https://www.linkedin.com/in/gustavo-sales-3310a6210",
+      "https://www.instagram.com/gustavo_____salles"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="logo">Gustavo</div>
+
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container">
+    <section class="card reveal" aria-label="Apresentação">
+      <img src="https://i.imgur.com/aS0H0KX.png" alt="Foto de Gustavo Sales" loading="lazy" decoding="async">
+
+      <h1>Gustavo Sales</h1>
+
+      <p class="headline">
+        Integração de sistemas • Automação comercial • IA aplicada a vendas
+      </p>
+
+      <p class="subheadline">
+        Desenvolvo soluções com APIs, CRM, ERP, banco de dados e chatbots inteligentes
+        para qualificação de leads, automação de fluxos e ganho de eficiência operacional.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="https://github.com/GustavoSales2001" target="_blank" rel="noreferrer">
+          <i class="fab fa-github" aria-hidden="true"></i> GitHub
+        </a>
+
+        <a class="btn" href="https://www.linkedin.com/in/gustavo-sales-3310a6210" target="_blank" rel="noreferrer">
+          <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+        </a>
+      </div>
+
+      <div class="skills" aria-label="Tecnologias">
+        <span class="badge">IA</span>
+        <span class="badge">APIs</span>
+        <span class="badge">CRM</span>
+        <span class="badge">ERP</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Automação</span>
+      </div>
+
+      <div class="social" aria-label="Contato rápido">
+        <a href="https://wa.me/5511933128628" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+
+        <a href="mailto:gustavosalesbarros2001@gmail.com" target="_blank" rel="noreferrer" aria-label="E-mail">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://www.instagram.com/gustavo_____salles" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <form id="formContato" data-api-base="https://backend-api-production-e153.up.railway.app" novalidate>
+        <div class="sr-only" aria-hidden="true">
+          <label for="company">Empresa</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required maxlength="255" minlength="2">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Seu email" autocomplete="email" required maxlength="255">
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Deixe sua mensagem" rows="3" required maxlength="2000" minlength="10"></textarea>
+
+        <button id="btnEnviar" type="submit">Enviar</button>
+
+        <div id="feedback" class="feedback" style="display:none;" role="status" aria-live="polite" tabindex="-1"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Gustavo Sales - Todos os direitos reservados</p>
+
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/gustavo-sales-3310a6210" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://github.com/GustavoSales2001" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

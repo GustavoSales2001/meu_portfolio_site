@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projetos - Gustavo Sales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+  <div class="logo">Gustavo</div>
+
+  <nav class="menu">
+    <a href="sobre.html">Sobre</a>
+    <a href="projetos.html">Projetos</a>
+  </nav>
+</header>
+
+<main class="page-container">
+
+  <section class="projeto-card reveal">
+    <h2>Projeto: Plataforma de Curso com Pagamento, Chatbot e Dashboard em Tempo Real</h2>
+    <div class="case-section">
+
+  <div class="case-header">
+    <span class="case-tag">CASE REAL EM PRODUÇÃO</span>
+    <h3>Arquitetura, automação e problemas resolvidos</h3>
+    <p>
+      Prints reais do desenvolvimento, deploy, banco de dados, logs e integrações usadas no projeto.
+    </p>
+  </div>
+
+  <div class="case-grid">
+
+    <article class="case-card featured">
+      <img src="img/dashboard.jpeg" alt="Dashboard do chatbot em tempo real">
+      <div class="case-content">
+        <span>Dashboard</span>
+        <h4>Inbox em tempo real para acompanhar conversas</h4>
+        <p>
+          Painel criado para visualizar mensagens enviadas e recebidas, status do bot,
+          histórico do usuário e acompanhamento das interações captadas pelo MySQL.
+        </p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <img src="img/mysql-leads.jpeg" alt="Tabela MySQL com usuários e followups">
+      <div class="case-content">
+        <span>Banco de Dados</span>
+        <h4>Captação e controle de leads no MySQL</h4>
+        <p>
+          Estrutura de dados para acompanhar cadastro, telefone, pagamento, envio de WhatsApp
+          e quantidade de follow-ups realizados para cada lead.
+        </p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <img src="img/webhook-funcionando.jpeg" alt="Webhook e logs funcionando no Railway">
+      <div class="case-content">
+        <span>Produção</span>
+        <h4>Webhook e logs monitorados no Railway</h4>
+        <p>
+          Logs usados para validar recebimento de eventos, envio de mensagens, conexão com APIs
+          externas e comportamento do fluxo automatizado em produção.
+        </p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <img src="img/cors-erro.jpeg" alt="Erro CORS resolvido">
+      <div class="case-content">
+        <span>Correção Técnica</span>
+        <h4>Correção de CORS entre front-end e API</h4>
+        <p>
+          Ajuste das origens permitidas e middleware no Express para liberar a comunicação
+          entre site, dashboard e back-end de forma segura.
+        </p>
+      </div>
+    </article>
+
+    <article class="case-card">
+      <img src="img/erro-whatsapp.jpeg" alt="Erro de autenticação WhatsApp">
+      <div class="case-content">
+        <span>WhatsApp API</span>
+        <h4>Resolução de autenticação na Meta API</h4>
+        <p>
+          Revisão de token, phone number ID, variáveis de ambiente e chamada oficial da API
+          para estabilizar o envio automático de mensagens.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+</div>
+
+    <p>
+      Este projeto foi desenvolvido como uma solução completa para venda e entrega de um curso online,
+      unindo página de vendas, cadastro de usuários, captação de leads, banco de dados, pagamento,
+      automação via WhatsApp, chatbot inteligente e dashboard de acompanhamento.
+    </p>
+
+    <p>
+      O fluxo principal começa no site, onde o usuário acessa a página do curso e realiza o cadastro.
+      Esses dados são armazenados no MySQL, permitindo acompanhar nome, e-mail, telefone, status de acesso,
+      pagamento e histórico de interação. A partir disso, o sistema consegue identificar em qual etapa cada
+      lead está dentro da jornada.
+    </p>
+
+    <p>
+      Após o cadastro, o usuário é direcionado para o pagamento. A integração com Mercado Pago registra o
+      pagamento, acompanha o status da transação e libera automaticamente o acesso ao conteúdo quando o
+      pagamento é aprovado. Caso o usuário se cadastre, mas não finalize a compra, ele entra em uma régua
+      automatizada de recuperação.
+    </p>
+
+    <p>
+      Para leads que não concluíram o pagamento, o sistema aguarda um intervalo estratégico e inicia um
+      follow-up automático pelo WhatsApp. O bot entra em contato de forma natural, identifica dúvidas,
+      responde objeções e ajuda o lead a seguir para a compra, sem depender de abordagem manual imediata.
+    </p>
+
+    <p>
+      O chatbot foi estruturado para responder dúvidas sobre o curso, currículo, IA, Gupy, ATS, pagamento,
+      acesso, problemas técnicos, certificado, primeiro emprego, transição de carreira e outras situações
+      comuns. As respostas foram organizadas para orientar o usuário, gerar segurança e direcionar corretamente
+      entre atendimento comercial e suporte técnico.
+    </p>
+
+    <p>
+      Também desenvolvi um dashboard/inbox para acompanhar as mensagens do chatbot. O painel busca as
+      informações diretamente do banco de dados, usando o número de celular como referência para conectar
+      usuário, mensagens enviadas, mensagens recebidas e status do bot. Dessa forma, é possível acompanhar
+      as conversas praticamente em tempo real e intervir manualmente quando necessário.
+    </p>
+
+    <p>
+      Durante o desenvolvimento, enfrentei e resolvi problemas reais de produção. Um dos principais foi o erro
+      de autenticação da API do WhatsApp/Meta, que impedia o envio das mensagens. A correção envolveu revisar
+      token, phone number ID, variáveis de ambiente e configuração da chamada para a API oficial.
+    </p>
+
+    <p>
+      Outro ponto importante foi a normalização dos números de telefone. O sistema precisava lidar com celulares
+      salvos em formatos diferentes no banco, com ou sem DDI, espaços, parênteses e traços. Para resolver isso,
+      implementei uma lógica de limpeza e padronização dos números brasileiros antes do envio pelo WhatsApp.
+    </p>
+
+    <p>
+      Também corrigi problemas de CORS, que bloqueavam requisições entre o front-end, o dashboard e a API em
+      produção. A solução foi ajustar as origens permitidas, liberar corretamente os métodos necessários e
+      garantir que a comunicação entre site, painel e back-end funcionasse de forma segura.
+    </p>
+
+    <p>
+      Além disso, implementei controles para evitar disparos duplicados, pausa do bot, registro de mensagens
+      de entrada e saída, delay estratégico antes do envio automático e organização dos logs no banco. Isso
+      deixou o fluxo mais estável, rastreável e próximo de uma operação comercial real.
+    </p>
+
+    <p>
+      Esse projeto representa uma aplicação Full Stack completa, com front-end, back-end, banco de dados,
+      integração com APIs externas, automação comercial, pagamento online, chatbot e dashboard. Mais do que
+      uma página de curso, ele funciona como uma esteira automatizada de vendas, atendimento e recuperação
+      de leads.
+    </p>
+
+    <div class="botao">
+      <a class="btn" href="https://gustavosales2001.github.io/Cursos_Love/" target="_blank">
+        <i class="fa-solid fa-globe"></i> Acessar Projeto
+      </a>
+
+      <a class="btn" href="index.html">
+        <i class="fa-solid fa-house"></i> Home Portfólio
+      </a>
+    </div>
+  </section>
+
+  <div class="voltar">
+    <a class="btn" href="index.html">
+      <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
+    </a>
+  </div>
+
+  
+
+</main>
+
+<footer>
+  <p>© 2026 Gustavo Sales - Todos os direitos reservados</p>
+
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/gustavo-sales-3310a6210" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/GustavoSales2001" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</footer>
+
+<!-- MODAL ZOOM -->
+<div id="imgModal" class="img-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="modalCaption"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
